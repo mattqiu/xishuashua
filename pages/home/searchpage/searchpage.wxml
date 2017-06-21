@@ -1,0 +1,71 @@
+<!--pages/home/searchpage/searchpage.wxml-->
+
+<!----------------------->
+<!--提示框-->
+<import src="../../../tpls/toast/toast.wxml"/>
+<!-- is="toast" 匹配组件中的toast提示  如果用dialog的话这就是dialog -->
+<template is="toast" data="{{ ...$wux.toast }}"/>
+
+<scroll-view  enable-back-to-top="{{true}}" scroll-y="{{true}}" style="height:{{scrollHeight}}rpx;" class="scrollView whiteBg">
+
+    <!--搜索框-->
+    <form bindsubmit="formSubmit">
+
+      <view class="searchBox">
+        
+        <input maxlength="10" class="left border" name="keyword" placeholder-style="color: rgb(187,187,187);" placeholder="🔍  请输入关键搜索词" value="{{keyword}}" bindinput='bindinput' />
+
+        <button class="right defalutBg" formType="submit">搜索</button>
+
+        <view class="clear"></view>
+
+      </view>
+    </form>
+
+    <view class="bg" style="height:20rpx;" hidden="{{!hiddeEnptyBox}}"></view>
+    
+    <!--搜索结果列表-->
+    <view class="borderWhite whiteBg">
+      <block wx:for="{{searchDatas}}" wx:key="">
+        <view class="hotSellItem" bindtap="hotsItemDetail" data-info="{{item}}">
+          <image src="{{item.pic}}" class="left"></image>
+          <view class="left detailInfo">
+              <view class="name huanhang-many" >{{item.name}}</view>
+              <view class="goodcount huanhang">好评数：{{item.goodcount}}</view>
+              <view class="price huanhang">
+                <view class="left ">￥{{item.price}}</view>
+                <view class="left oldprice " >￥{{item.oldprice}}</view>
+                <view class="clear"></view>
+              </view>
+          </view>
+          <view class="clear"></view>
+        </view>
+      </block>
+    </view>
+
+
+    <!--热门搜索-->
+    <view  class="hotsearchBox" hidden="{{!hiddeEnptyBox || searchDatas.length != 0}}">
+      <view class="name">热门搜索：</view>
+      
+      <view class="contentBox">  
+        <block wx:for="{{hots}}" wx:key="" >
+          <view class="contentBoxItem left border defalutColor" bindtap="hotSearchItemClicked" data-info="{{item}}">{{item}}</view>
+        </block>
+        <view class="clear"></view>
+      </view>
+      
+
+    </view>
+
+
+    <!--结果为空-->
+    <view class="enptyBox" hidden="{{hiddeEnptyBox}}">  
+      <image src="../../../images/search/Expression.png"></image>
+      <view class="text">抱歉亲，大脑搜索失败~</view>
+    </view>
+
+
+
+
+  </scroll-view>

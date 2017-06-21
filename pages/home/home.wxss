@@ -1,1 +1,122 @@
 /* pages/home/home.wxss */
+
+.swiper-image {
+	width: 100%;
+	height: 100%;
+}
+
+.relative{
+  position: relative;
+}
+
+.absolute{
+  position: absolute;
+  top: 20rpx;
+}
+
+.width100{
+  width: 100%;
+}
+.searchBox{
+  width: 315rpx;
+  margin-left: 217.5rpx;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 30rpx;
+  height: 56rpx;
+  z-index: 100rpx;
+}
+.searchBox image{
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  top: 15rpx;
+  left: 28rpx;
+}
+.searchBox .input{
+  font-size: 26rpx;
+  padding: 0rpx;
+  line-height: 56rpx;
+}
+
+
+/*小 分类 导航 */
+.littleNav{
+  padding: 20rpx 0rpx 10rpx 10rpx;
+}
+.navItem {
+  width: 237rpx;
+  height: 237rpx;
+  margin-right: 10rpx;
+  margin-bottom: 15rpx;
+  text-align: center;
+}
+.navItem view{
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-top: 25rpx;
+}
+.navItem image {
+  margin-top: 5rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+
+/*热门推荐*/
+.hotSell{
+}
+.hotSell .title{
+  margin-top: 25rpx;
+  margin-left: 20rpx;
+  margin-bottom: -5rpx;
+  font-size:30rpx;
+  line-height: 1.0;
+}
+.hotSell .titleImg{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+
+.hotSellItem {
+  padding-top: 25rpx;
+  padding-left: 20rpx;
+  padding-bottom: 25rpx;
+  border-bottom: 1rpx solid rgb(220, 220, 220);
+}
+
+.hotSellItem image{
+  width:250rpx;
+  height: 200rpx;
+} 
+.hotSellItem .detailInfo {
+  width:435rpx;
+  height: 200rpx;
+  padding-left: 25rpx;
+}
+.hotSellItem .detailInfo .name{
+  font-size: 26rpx;
+  color: #444;
+  line-height: 1.5;
+  height: 74rpx;
+}
+.hotSellItem .detailInfo .goodcount{
+  font-size: 24rpx;
+  color: #888;
+  line-height: 1.0;
+  margin-top: 30rpx;
+}
+.hotSellItem .detailInfo .price{
+  font-size: 32rpx;
+  color: #F38500;
+  line-height: 1.0;
+  margin-top: 30rpx;
+}
+.hotSellItem .detailInfo .price .oldprice{
+  font-size: 22rpx;
+  color: #2b2b2b;
+  line-height: 1.0;
+  text-decoration:line-through;
+  margin-left: 15rpx;
+  margin-top: 10rpx;
+}

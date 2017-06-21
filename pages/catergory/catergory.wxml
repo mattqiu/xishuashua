@@ -1,2 +1,13 @@
 <!--pages/catergory/catergory.wxml-->
-<text>pages/catergory/catergory.wxml</text>
+
+<!--小分类-->
+<view class="littleNav whiteBg">
+    
+    <block wx:for="{{navs}}" wx:key="">
+      <view class="navItem left bg" bindtap="navItemDetail" data-info="{{item}}">
+          <view class="">{{item.name}}</view>
+          <image src="{{item.picPath}}"></image>
+      </view>
+    </block>
+    <view class="clear"></view>
+</view>

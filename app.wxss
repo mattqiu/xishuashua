@@ -56,13 +56,18 @@
 .border{
   border: 1rpx solid #03ACEF;
 }
-
-page{  
-  background-color: #F4F4F4; 
+.defalutBg{
+  background-color: #03ACEF;
 }
-
-
-
+.borderWhite{
+  border: 1rpx solid white;
+}
+page{  
+  background-color: F4F4F4; 
+}
+.whiteBg{
+  background-color: white;
+}
 
 .center {
   text-align: center;
@@ -95,9 +100,17 @@ page{
 }
 
 
-/*换行*/
+/*换行 单行*/
 .huanhang{
     overflow: hidden;
 	  text-overflow: ellipsis;
 	  white-space: nowrap;  /*文本不换行，这样超出一行的部分被截取，显示...*/ 
 }
+
+/*换行 多行*/
+.huanhang-many{
+    overflow: hidden;
+	  text-overflow: ellipsis;
+	  white-space: pre-wrap;  /*文本不换行，这样超出一行的部分被截取，显示...*/ 
+}
+

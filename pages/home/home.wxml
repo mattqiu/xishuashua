@@ -1,2 +1,78 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+
+<!----------------------->
+<!--提示框-->
+<import src="../../tpls/toast/toast.wxml"/>
+<!-- is="toast" 匹配组件中的toast提示  如果用dialog的话这就是dialog -->
+<template is="toast" data="{{ ...$wux.toast }}"/>
+
+
+<!----------------------->
+<!--主体内容-->
+
+<!--头部-->
+<view >
+
+  <!--横幅-->
+  <swiper indicator-dots="true" indicator-color= 'white' indicator-active-color='#03ACEF'
+    autoplay="true" interval="5000" duration="1000" style="height:{{bannerHeight}}rpx;" class="">
+    <block wx:for="{{banner}}" wx:key="">
+      <swiper-item>
+        <image src="{{item}}" mode="aspectFill" class="swiper-image" bindtap="bannerDetail" data-info="{{item}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  
+  <!--搜索框-->
+  <view class="absolute searchBox" bindtap="toSearchPage">
+    <image src="../../images/banner/search-write.png" class=""></image>
+    <view class="center white input">输入关键搜索词</view>
+  </view>
+</view>
+
+
+
+<!--小分类-->
+<view class="littleNav whiteBg">
+    
+    <block wx:for="{{navs}}" wx:key="">
+      <view class="navItem left bg" bindtap="navItemDetail" data-info="{{item}}">
+          <view class="">{{item.name}}</view>
+          <image src="{{item.picPath}}"></image>
+      </view>
+    </block>
+    <view class="clear"></view>
+</view>
+
+<!--间隔-->
+<view class="" style="height: 20rpx;"></view>
+
+<!--热门推荐-->
+<view class="borderWhite hotSell whiteBg">
+    
+    <view class="title">
+      <view class="left">热门推荐</view>
+      <image src="../../images/hotsell/popular.png" class="titleImg left"></image>
+      <view class="clear"></view>
+    </view>
+    
+    <block wx:for="{{hots}}" wx:key="">
+      <view class="hotSellItem" bindtap="hotsItemDetail" data-info="{{item}}">
+        <image src="{{item.pic}}" class="left"></image>
+        <view class="left detailInfo">
+            <view class="name huanhang-many" >{{item.name}}</view>
+            <view class="goodcount huanhang">好评数：{{item.goodcount}}</view>
+            <view class="price huanhang">
+              <view class="left ">￥{{item.price}}</view>
+              <view class="left oldprice " >￥{{item.oldprice}}</view>
+              <view class="clear"></view>
+            </view>
+        </view>
+        <view class="clear"></view>
+      </view>
+    </block>
+</view>
+
+<!--间隔-->
+<view class="" style="height: 20rpx;"></view>
+

@@ -5,7 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    // 小 分类 导航
+    navs: [
+      {
+        name: "家庭清洗",
+        picPath: "../../images/littleNav/Home cleaning.png"
+      },
+      {
+        name: "大宗清洗",
+        picPath: "../../images/littleNav/Mass cleaning.png"
+      },
+      {
+        name: "免费体验",
+        picPath: "../../images/littleNav/Free experience.png"
+      },
+      {
+        name: "家庭软装",
+        picPath: "../../images/littleNav/Family soft pack.png"
+      },
+      {
+        name: "商务软装",
+        picPath: "../../images/littleNav/Business soft suit.png"
+      },
+      {
+        name: "软装设计",
+        picPath: "../../images/littleNav/Soft package design.png"
+      }
+    ],
   },
 
   /**
@@ -62,5 +88,11 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  navItemDetail: function (e) {
+    console.log(e.currentTarget.dataset.info)
+    wx.navigateTo({
+      url: './catergory2nd/catergory2nd',
+    })
+  },
 })

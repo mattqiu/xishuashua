@@ -1,11 +1,18 @@
 {
   "pages": [
+    
     "pages/home/home",
+    "pages/home/searchpage/searchpage",
+    "pages/home/goodsDetailpage/goodsDetailpage",
+
     "pages/catergory/catergory",
+    "pages/catergory/catergory2nd/catergory2nd",  
+
     "pages/shopcar/shopcar",
     "pages/mine/mine"
-    
   ],
+  
+
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#03ACEF",
@@ -18,7 +25,7 @@
     "borderStyle": "white",
     "backgroundColor": "#F6F6F6",
     "list": [
-     {
+      {
         "pagePath": "pages/home/home",
         "iconPath": "images/tabbar/home.png",
         "selectedIconPath": "images/tabbar/home_selected.png",

@@ -1,0 +1,57 @@
+<!--行政区划-->
+
+<template name="wxregion" >
+
+    <view wx:if="{{isShowRegion}}" catchtap="tapMasker" catchtouchmove="preventMaskerMove" class="masker"></view>
+    
+    <view class="region-container" wx:if="{{isShowRegion}}" >
+        
+        <view class="region-header">
+            <view class="cancel " bindtap="cancelRegion">取消</view>
+            <view class="confirm "  bindtap="confirmRegion">确定</view>
+        </view>
+
+        <picker-view  class="region" indicator-style="height: 50px;" tagName="abc" value="{{region}}" bindchange="bindRegionChange">
+            <picker-view-column>
+                <view wx:key="provunique" wx:for="{{provinceData}}" class="addr-item">
+                    {{item.text}}
+                </view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:key="cityunique" wx:for="{{cityData}}" class="addr-item">
+                    {{item.text}}
+                </view>
+            </picker-view-column>
+        </picker-view>
+
+    </view>
+
+</template>
+
+<template name="wxchaishi" >
+
+    <view wx:if="{{isShowChaishi}}" catchtap="tapMasker" catchtouchmove="preventMaskerMove" class="masker"></view>
+    
+    <view class="region-container" wx:if="{{isShowChaishi}}" >
+        
+        <view class="region-header">
+            <view class="cancel " bindtap="cancelChaishi">取消</view>
+            <view class="confirm "  bindtap="confirmChaishi">确定</view>
+        </view>
+
+        <picker-view  class="region" indicator-style="height: 50px;" tagName="abc" value="{{chaishi}}" bindchange="bindChaishiChange">
+            <picker-view-column>
+                <view wx:key="chaiunique" wx:for="{{chaishiData}}" class="addr-item">
+                    {{item.text}}
+                </view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:key="jobunique" wx:for="{{chaishiJobData}}" class="addr-item">
+                    {{item.text}}
+                </view>
+            </picker-view-column>
+        </picker-view>
+
+    </view>
+
+</template>

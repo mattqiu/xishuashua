@@ -1,0 +1,103 @@
+/**app.wxss**/
+
+/**
+ * 全局样式表
+ * 使用@import语句可以导入外联样式表，@import后跟需要导入的外联样式表的相对路径，用;表示语句结束
+ * 如果需要增加额外的WXSS样式表, 直接import即可, 但需注意引用顺序
+ */
+@import "weui.wxss";
+@import "skyvow.wxss";
+
+
+@import "wxss/wxregion.wxss";
+@import 'tpls/toast/wux.wxss';
+
+/** 公共部分 **/
+.right {
+  float: right
+}
+.left {
+  float: left;
+}
+.clear {
+  clear: both;
+}
+
+
+/**********/
+/*字体颜色*/
+
+/*白色*/
+.white {
+  color: white;
+}
+/*主颜色*/
+.mainColor{
+  color: #444;
+}
+/*次颜色*/
+.otherColor{
+  color: #888;
+}
+/*默认颜色*/
+.defalutColor{
+  color: #03ACEF;
+}
+/*时间/附加颜色*/
+.timeColor{
+  color: #B2B2B2;
+}
+
+/**********/
+/*背景颜色*/
+.bg {
+  background-color: #F4F4F4;
+}
+.border{
+  border: 1rpx solid #03ACEF;
+}
+
+page{  
+  background-color: #F4F4F4; 
+}
+
+
+
+
+.center {
+  text-align: center;
+}
+
+.flex-start-center{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flex-around-center{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-start-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.flex-between-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-between-start{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+/*换行*/
+.huanhang{
+    overflow: hidden;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;  /*文本不换行，这样超出一行的部分被截取，显示...*/ 
+}
